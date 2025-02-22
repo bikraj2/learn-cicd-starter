@@ -21,6 +21,9 @@ jobs:
       - name: Check go version 
         run: |
           go version
-      - name: Runt tests
+      - name: Run tests
         run: |
           go test --cover ./... 
+      - name: Format test
+        run: |
+          test -z $(go fmt ./...)
